@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PostDataService } from '../post-data.service';
 import { first } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @Component({
@@ -10,6 +13,7 @@ import { first } from 'rxjs/operators';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
+
 export class UserFormComponent implements OnInit {
   packageForm: FormGroup;
   netto;
@@ -17,7 +21,7 @@ export class UserFormComponent implements OnInit {
 
 
   constructor (private formBuilder: FormBuilder,
-    private route: ActivatedRoute, private API: PostDataService){}
+    private route: ActivatedRoute, private API: PostDataService, private toastr: ToastrService){}
 
   ngOnInit(): void {
     this.packageForm = this.formBuilder.group({
@@ -44,6 +48,7 @@ export class UserFormComponent implements OnInit {
   onSubmit() {
     console.log("test");
     if (this.packageForm.invalid) {
+      this.toastr.warning("Musisz uzupełnić wszystkie pola poprawnie.")
     }
     else {
       this.API.postForm(this.packageForm.value)

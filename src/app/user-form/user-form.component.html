@@ -1,100 +1,120 @@
-<div class="container">
+<br>
+<div class="container bg-dark">
     <form [formGroup]="packageForm" (ngSubmit)="onSubmit()">
         <div class="row">
-            <div class="col-sm-4">
-                <h2>Wymiary paczki: </h2>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Wysokość:
-                    </label>
-                    <input class="form-control form-control-solid" type="number" formControlName="height" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Długość:
-                    </label>
-                    <input class="form-control form-control-solid" type="number" formControlName="length" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Szerokość:
-                    </label>
-                    <input class="form-control form-control-solid" type="number" formControlName="width" />
-                </div>
-            
-                <label>Cena brutto: {{brutto}}</label>
-                <br>
-                <label>Cena netto:  {{netto}}</label>
-
-            </div>
-            <div class="col-sm-4">
-                <h2>Dane nadawcy: </h2>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Imię:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderName" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Nazwisko:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderSurname" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Miasto:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderCity" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Ulica:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderStreet" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Numer domu:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderApartment" />
-                </div>
-                <div class="form-group">
-                    <label class="text-gray-600 small" for="emailExample">Numer telefonu:
-                    </label>
-                    <input class="form-control form-control-solid" type="text" formControlName="senderPhoneNumber"/>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-secondary text-white border-warning">
+                    <div class="card-body">
+                        <h2>Wymiary paczki: </h2>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Wysokość:
+                            </label>
+                            <input class="form-control form-control-solid" type="number" formControlName="height" required  minlength="1" maxlength="3"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Długość:
+                            </label>
+                            <input class="form-control form-control-solid" type="number" formControlName="length" required  minlength="1" maxlength="3"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Szerokość:
+                            </label>
+                            <input class="form-control form-control-solid" type="number" formControlName="width" required  minlength="1" maxlength="3"/>
+                        </div>
+                    </div>
                 </div>
             </div>
-                <div class="col-sm-4">
-                    <h2>Dane odbiorcy: </h2>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Imię:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverName" />
+            <div class="col-md-4 mb-3">
+                <div class="card bg-secondary text-white border-warning">
+                    <div class="card-body">
+                        <h2>Dane nadawcy: </h2>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Imię:
+                            </label>
+                            <input class="form-control form-control-solid" type="text" formControlName="senderName" required  minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Nazwisko:
+                            </label>
+                            <input class="form-control form-control-solid" type="text"
+                                formControlName="senderSurname" required  minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Miasto:
+                            </label>
+                            <input class="form-control form-control-solid" type="text" formControlName="senderCity" required  minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Ulica:
+                            </label>
+                            <input class="form-control form-control-solid" type="text" formControlName="senderStreet" required  minlength="1" maxlength="50"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Numer domu:
+                            </label>
+                            <input class="form-control form-control-solid" type="number"
+                                formControlName="senderApartment" required  minlength="1" maxlength="3"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Numer telefonu:
+                            </label>
+                            <input class="form-control form-control-solid" type="number"
+                                formControlName="senderPhoneNumber" required  length="9" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Nazwisko:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverSurname" />
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-secondary text-white border-warning">
+                    <div class="card-body">
+                        <h2>Dane odbiorcy: </h2>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Imię:
+                            </label>
+                            <input class="form-control form-control-solid" type="text" formControlName="receiverName" required  minlength="1" maxlength="30" />
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Nazwisko:
+                            </label>
+                            <input class="form-control form-control-solid" type="text"
+                                formControlName="receiverSurname"  required  minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Miasto:
+                            </label>
+                            <input class="form-control form-control-solid" type="text" formControlName="receiverCity" required  minlength="1" maxlength="30"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Ulica:
+                            </label>
+                            <input class="form-control form-control-solid" type="text"
+                                formControlName="receiverStreet" required  minlength="1" maxlength="50"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Numer domu:
+                            </label>
+                            <input class="form-control form-control-solid" type="number"
+                                formControlName="receiverApartment" required  minlength="1" maxlength="30" />
+                        </div>
+                        <div class="form-group">
+                            <label class="text-gray-600 small" for="emailExample">Numer telefonu:
+                            </label>
+                            <input class="form-control form-control-solid" type="number"
+                                formControlName="receiverPhoneNumber"required  length="9" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Miasto:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverCity" />
-                    </div>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Ulica:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverStreet" />
-                    </div>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Numer domu:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverApartment" />
-                    </div>
-                    <div class="form-group">
-                        <label class="text-gray-600 small" for="emailExample">Numer telefonu:
-                        </label>
-                        <input class="form-control form-control-solid" type="text" formControlName="receiverPhoneNumber" />
-                    </div>
-            </div> 
+                </div>
+            </div>
         </div>
-        <div class="form-group d-flex align-items-center justify-content-between mb-0">
-            <button class="btn btn-primary" style="width: 100%">
+        <div class="form-group d-flex align-items-center justify-content-between mx-2">
+            <button class="btn btn-warning m-4 font-weight-bold text-dark btn-lg md-6" style="width: 50%">
                 Oblicz koszt wysyłki
             </button>
+            <div class="bg-warning p-2 font-weight-bold text-dark" style="width: 50%">
+            <label class="font-weight-bold">Cena brutto: {{brutto}}</label>
+            <br>
+            <label class="font-weight-bold">Cena netto: {{netto}}</label>
+        </div>
         </div>
     </form>
 </div>
