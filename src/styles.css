@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+  .bg{
+    background: url("/assets/background.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }

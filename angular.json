@@ -22,7 +22,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/delivery-truck.png"
+              "src/delivery-truck.png",
+              "src/assets/background.png"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
