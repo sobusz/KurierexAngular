@@ -10,7 +10,7 @@ It is connected to our own API written in Java/Spring and Firebase realtime data
 * Toastr
 
 # Getting started
-# Prerequisities
+## Prerequisities
 * IDE 
 * Web Browser
 
